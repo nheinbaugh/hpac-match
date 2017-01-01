@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {routing} from "./app-routing.module";
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -10,6 +11,7 @@ import { AboutYouComponent } from './about-you/about-you.component';
 import { MatchComponent } from './match/match.component';
 import { AboutComponent } from './shared/about/about.component';
 import { ReviewMatchesComponent } from './review-matches/review-matches.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { ReviewMatchesComponent } from './review-matches/review-matches.componen
     AboutYouComponent,
     MatchComponent,
     AboutComponent,
-    ReviewMatchesComponent
+    ReviewMatchesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
