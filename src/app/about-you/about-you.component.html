@@ -1,3 +1,27 @@
-<p>
-  about-you works!
-</p>
+<div class="container">
+    <div class="header">
+        <h3>About You</h3>
+    </div>
+    <div class="content">
+        <p>In my house there are:</p>
+        <span class="check">
+            <input type="checkbox" [(ngModel)]="aboutYouModel.hasDogs">
+            <span>Dogs</span>
+        </span>
+        <span class="check">
+            <input type="checkbox" [(ngModel)]="aboutYouModel.hasCats">
+            <span>Cats</span>
+        </span>
+        <span class="check">
+            <input type="checkbox" [(ngModel)]="aboutYouModel.hasChickens">
+            <span>Chickens</span>
+        </span>
+        <span class="check">
+            <input type="checkbox" [(ngModel)]="aboutYouModel.hasChildren">
+            <span>Little People</span>
+        </span>
+        <div class="continue">
+            <button class="btn btn-outline-primary" (click)="submitAndContinue()">Continue</button>
+        </div>
+    </div>
+</div>
