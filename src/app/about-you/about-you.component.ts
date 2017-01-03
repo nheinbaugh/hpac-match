@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AboutYouModel} from './about-you-model';
-import {PetFinderService} from '../shared/pet-finder.service';
+import {ActivatedRoute} from '@angular/router';
+import {ChoiceService} from '../shared/choice.service';
 
 @Component({
   selector: 'app-about-you',
@@ -8,12 +8,10 @@ import {PetFinderService} from '../shared/pet-finder.service';
   styleUrls: ['./about-you.component.scss']
 })
 export class AboutYouComponent implements OnInit {
-  private aboutYouModel: AboutYouModel;
 
-  constructor(private svc: PetFinderService) { }
+  constructor(public choiceService: ChoiceService) { }
 
   ngOnInit() {
-    this.aboutYouModel = new AboutYouModel();
   }
 
   submitAndContinue(): void {

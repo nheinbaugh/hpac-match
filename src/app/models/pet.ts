@@ -9,6 +9,8 @@ export class Pet {
     photoLink: string;
     sex: string;
     size: string;
+    noDogsAllowed: boolean = false;
+    noCatsAllowed: boolean = false;
 
     constructor(apiPet: any) {
         this.id = apiPet.id.$t;
@@ -22,6 +24,20 @@ export class Pet {
         let photos = _.filter(apiPet.media.photos.photo, p => {
             return (p['@size'] === 'pn' || p['@size'] === 'x')
         });
+        let options = apiPet.options.option;
+
+        let noCats = _.filter(options, (option) => {
+            return option.$t === 'noCats';
+        });
+        let noDogs= _.filter(options, (option) => {
+            return option.$t === 'noDogs';
+        });
+        if (_.isEmpty(noCats)) {
+            this.noCatsAllowed = true;
+        }
+        if (_.isEmpty(noDogs)) {
+            this.noDogsAllowed = true;
+        }
         if (!_.isEmpty(photos)) {
             this.photoLink = photos[0].$t;
         }

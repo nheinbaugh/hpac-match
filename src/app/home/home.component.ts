@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {PetFinderService} from '../shared/pet-finder.service';
+import {ChoiceService} from '../shared/choice.service';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +9,13 @@ import {PetFinderService} from '../shared/pet-finder.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public Router: Router, private svc: PetFinderService) { }
+  constructor(public Router: Router, private choiceSvc: ChoiceService) { }
 
   ngOnInit() {
   }
 
   aboutYouNavigation(type: string): void {
-    this.Router.navigate(['info', {typesOfAnimals: type}])
+    this.choiceSvc.selectedAnimalType = type;
+    this.Router.navigate(['info'])
   }
 }

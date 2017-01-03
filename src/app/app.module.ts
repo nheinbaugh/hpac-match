@@ -13,6 +13,7 @@ import { AboutComponent } from './shared/about/about.component';
 import { ReviewMatchesComponent } from './review-matches/review-matches.component';
 import { HomeComponent } from './home/home.component';
 import {PetFinderService} from './shared/pet-finder.service';
+import {ChoiceService} from './shared/choice.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,10 @@ import {PetFinderService} from './shared/pet-finder.service';
     JsonpModule,
     routing
   ],
-  providers: [PetFinderService],
+  providers: [
+    PetFinderService,
+    ChoiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Jsonp, URLSearchParams, Headers} from '@angular/http';
-import {Observable} from 'rxjs';
+import {Observable, BehaviorSubject} from 'rxjs';
 import {Pet} from '../models/pet';
 
 let _ = require('lodash');
@@ -12,11 +12,9 @@ export class PetFinderService {
     private hpacId: string = 'WA109';
     private key: string = 'c34c4e1b4b872da0e17df1df0a2e85bd';
     private baseParams: URLSearchParams;
-    private _pets: Pet[] = [];
 
-    get Pets(): Observable<Pet> {
-        return Observable.from(this._pets);
-    }
+    public _pets: BehaviorSubject<Pet[]> = new BehaviorSubject<Pet[]>([]);
+    public Pets: Observable<Pet[]> = this._pets.asObservable();
 
     constructor(private jsonp: Jsonp) {
     }
@@ -46,10 +44,12 @@ export class PetFinderService {
         let urlString: string = this.baseUrl + 'shelter.getPets';
         return this.jsonp.request(urlString, {search: urlSearchParams, headers: headers})
             .map(res => {
+                let tempArr = [];
                 let json: any[] = res.json().petfinder.pets.pet;
-                return _.map(json, (pet: any) => {
-                    this._pets.push(new Pet(pet));
-                })
+                _.map(json, (pet: any) => {
+                    tempArr.push(new Pet(pet));
+                });
+                this._pets.next(tempArr);
             }, err => {
                 console.log(err);
             })

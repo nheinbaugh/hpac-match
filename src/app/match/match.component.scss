@@ -1,0 +1,23 @@
+:host {
+  .pet-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .headshot {
+      flex-basis: 30%;
+      max-width: 80%;
+      flex-grow: 0;
+    }
+
+    .selections {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      > button {
+        margin: 1em;
+      }
+    }
+  }
+}

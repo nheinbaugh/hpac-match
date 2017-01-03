@@ -5,23 +5,23 @@
     <div class="content">
         <p>In my house there are:</p>
         <span class="check">
-            <input type="checkbox" [(ngModel)]="aboutYouModel.hasDogs">
+            <input type="checkbox" [(ngModel)]="choiceService.hasDogs">
             <span>Dogs</span>
         </span>
         <span class="check">
-            <input type="checkbox" [(ngModel)]="aboutYouModel.hasCats">
+            <input type="checkbox" [(ngModel)]="choiceService.hasCats">
             <span>Cats</span>
         </span>
         <span class="check">
-            <input type="checkbox" [(ngModel)]="aboutYouModel.hasChickens">
+            <input type="checkbox" [(ngModel)]="choiceService.hasChickens">
             <span>Chickens</span>
         </span>
         <span class="check">
-            <input type="checkbox" [(ngModel)]="aboutYouModel.hasChildren">
+            <input type="checkbox" [(ngModel)]="choiceService.hasChildren">
             <span>Little People</span>
         </span>
         <div class="continue">
-            <button class="btn btn-outline-primary" (click)="submitAndContinue()">Continue</button>
+            <button class="btn btn-outline-primary" routerLink="/match">Continue</button>
         </div>
     </div>
 </div>
