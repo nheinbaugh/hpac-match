@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {Pet} from '../models/pet';
 @Injectable()
 export class ChoiceService {
     selectedAnimalType: string;
@@ -6,4 +7,6 @@ export class ChoiceService {
     hasCats: boolean = false;
     hasChickens: boolean = false;
     hasChildren: boolean = false;
+
+    public matches: Pet[] = [];
 }

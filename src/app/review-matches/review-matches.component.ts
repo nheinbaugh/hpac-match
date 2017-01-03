@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ChoiceService} from '../shared/choice.service';
+import {Pet} from '../models/pet';
 
 @Component({
   selector: 'app-review-matches',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReviewMatchesComponent implements OnInit {
 
-  constructor() { }
+  private matches: Pet[] = [];
+  constructor(private choiceService: ChoiceService) { }
 
   ngOnInit() {
+    this.matches = this.choiceService.matches;
   }
 
 }

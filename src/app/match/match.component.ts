@@ -15,7 +15,6 @@ export class MatchComponent implements OnInit {
   public allPets: Pet[];
   private matchingPets: Pet[];
   private currentPet: Pet;
-  private matches: Pet[] = [];
   constructor(private svc: PetFinderService, private choiceService: ChoiceService,
       private router: Router, private toaster: ToastsManager) { }
 
@@ -72,7 +71,7 @@ export class MatchComponent implements OnInit {
 
   private continue(addToMatches: boolean): void {
     if (addToMatches) {
-      this.matches.push(this.currentPet);
+      this.choiceService.matches.push(this.currentPet);
       // toast for selection
       this.toaster.success('Success', `${this.currentPet.name} has been added to your match list`);
     }
