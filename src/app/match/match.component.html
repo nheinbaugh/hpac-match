@@ -6,8 +6,8 @@
     <img class="headshot" [src]="currentPet.photoLink"  alt="">
     <h3 class="name">{{currentPet.name}}</h3>
     <div class="selections">
-      <button class="btn btn-outline-primary">Not for Me</button>
-      <button class="btn btn-outline-primary">Love!</button>
+      <button class="btn btn-outline-primary" (click)="continue(false)">Not for Me</button>
+      <button class="btn btn-outline-primary" (click)="continue(true)">Love!</button>
     </div>
   </div>
 </div>
