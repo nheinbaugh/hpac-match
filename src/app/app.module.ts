@@ -14,6 +14,7 @@ import { ReviewMatchesComponent } from './review-matches/review-matches.componen
 import { HomeComponent } from './home/home.component';
 import {PetFinderService} from './shared/pet-finder.service';
 import {ChoiceService} from './shared/choice.service';
+import {ToastModule} from 'ng2-toastr';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {ChoiceService} from './shared/choice.service';
     FormsModule,
     HttpModule,
     JsonpModule,
+    ToastModule,
     routing
   ],
   providers: [

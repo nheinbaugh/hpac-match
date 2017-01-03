@@ -3,6 +3,7 @@ import {PetFinderService} from '../shared/pet-finder.service';
 import {Pet} from '../models/pet';
 import {ChoiceService} from '../shared/choice.service';
 import {Router} from '@angular/router';
+import {ToastsManager} from 'ng2-toastr';
 let _ = require('lodash');
 
 @Component({
@@ -16,7 +17,7 @@ export class MatchComponent implements OnInit {
   private currentPet: Pet;
   private matches: Pet[] = [];
   constructor(private svc: PetFinderService, private choiceService: ChoiceService,
-      private router: Router) { }
+      private router: Router, private toaster: ToastsManager) { }
 
   ngOnInit() {
     this.svc.Pets.subscribe((pets: Pet[]) => {
@@ -73,6 +74,7 @@ export class MatchComponent implements OnInit {
     if (addToMatches) {
       this.matches.push(this.currentPet);
       // toast for selection
+      this.toaster.success('Success', `${this.currentPet.name} has been added to your match list`);
     }
     this.getRandomPet();
   }
