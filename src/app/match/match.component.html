@@ -3,7 +3,9 @@
     Finding a perfect match!
   </div>
   <div class="pet-info" *ngIf="currentPet">
-    <img class="headshot" [src]="currentPet.photoLink"  alt="">
+    <div class="headshot">
+      <img class="headshot" [src]="currentPet.photoLink"  alt="">
+    </div>
     <h3 class="name">{{currentPet.name}}</h3>
     <div class="selections">
       <a class="btn btn-outline-primary" (click)="continue(false)">Not for Me</a>

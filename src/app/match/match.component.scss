@@ -7,7 +7,16 @@
     .headshot {
       flex-basis: 30%;
       max-width: 80%;
+      max-height: 30%;
       flex-grow: 0;
+      flex-shrink: 0;
+      min-height: 0px;
+      min-width: 0px;
+
+      > img {
+        max-height: 100%;
+        max-width: 100%;
+      }
     }
 
     .selections {
@@ -16,7 +25,7 @@
       justify-content: space-between;
 
       > a {
-        height: 4em;
+        height: 2.5em;
         margin: 1em;
       }
     }

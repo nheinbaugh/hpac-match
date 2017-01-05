@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {Jsonp, URLSearchParams, Headers} from '@angular/http';
 import {Observable, BehaviorSubject} from 'rxjs';
 import {Pet} from '../models/pet';
-
 let _ = require('lodash');
 
 @Injectable()

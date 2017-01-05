@@ -1,0 +1,21 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  .map {
+    flex-basis: 40%;
+    width: 50%;
+  }
+
+  .icon-row {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 3px;
+    display: flex;
+
+    >i {
+      margin: 0.2em;
+    }
+  }
+}
