@@ -48,13 +48,13 @@ export class MatchComponent implements OnInit {
     // pull out no dogs allowed
     if (this.choiceService.hasDogs) {
       _.remove(remainingPets, (pet: Pet) => {
-        return pet.noDogsAllowed = true;
+        return pet.noDogsAllowed === true;
       })
     }
     // put out no cats
     if (this.choiceService.hasCats) {
       _.remove(remainingPets, (pet: Pet) => {
-        return pet.noCatsAllowed = true;
+        return pet.noCatsAllowed === true;
       })
     }
     this.matchingPets = remainingPets;

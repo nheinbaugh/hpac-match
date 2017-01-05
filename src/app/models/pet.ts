@@ -32,10 +32,10 @@ export class Pet {
         let noDogs= _.filter(options, (option) => {
             return option.$t === 'noDogs';
         });
-        if (_.isEmpty(noCats)) {
+        if (!_.isEmpty(noCats)) {
             this.noCatsAllowed = true;
         }
-        if (_.isEmpty(noDogs)) {
+        if (!_.isEmpty(noDogs)) {
             this.noDogsAllowed = true;
         }
         if (!_.isEmpty(photos)) {
