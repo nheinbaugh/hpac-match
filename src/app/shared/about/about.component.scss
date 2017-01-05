@@ -4,15 +4,9 @@
   justify-content: flex-end;
   height: 100%;
 
-  .map {
-    bottom: 0;
-    margin-bottom: 3em;
-
-    flex-basis: 40%;
-    width: 100%;
-    > iframe {
-      margin-top: 90%;
-    }
+  .text-stuf {
+    margin-left: 1em;
+    margin-right: 1em;
   }
 
   .icon-row {
@@ -21,7 +15,8 @@
     margin-bottom: 3px;
     display: flex;
 
-    >i {
+    >a {
+      color: black;
       margin: 0.2em;
     }
   }
