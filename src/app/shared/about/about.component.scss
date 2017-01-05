@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  height: 100%;
 
   .map {
     flex-basis: 40%;
-    width: 50%;
+    width: 100%;
   }
 
   .icon-row {
