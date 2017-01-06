@@ -20,7 +20,7 @@ export class MatchComponent implements OnInit {
 
   ngOnInit() {
     this.svc.Pets.subscribe((pets: Pet[]) => {
-      this.allPets = pets;
+      this.allPets =  pets;
       this.selectPets(pets);
       this.getRandomPet();
     });
@@ -32,7 +32,7 @@ export class MatchComponent implements OnInit {
   }
 
   private selectPets(pets: Pet[]){
-    let remainingPets = pets;
+    let remainingPets = Array.from(pets);
 
     // pull out dogs (or cats) if the user selected only one
     if (this.choiceService.selectedAnimalType === 'Dog') {

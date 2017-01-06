@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'hpac-header',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  private mainPage: boolean = false;
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    this.router.events.subscribe((event: any) => {
+      console.log(event);
+      if (event.url && event.url === '/') {
+        this.mainPage = true;
+      } else {
+        this.mainPage = false;
+      }
+    })
   }
 
 }

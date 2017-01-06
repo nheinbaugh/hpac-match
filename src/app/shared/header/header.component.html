@@ -1,4 +1,8 @@
-<div class="main-header">
-    <h2>Meet Your Match</h2>
+<div class="main-header" *ngIf="mainPage">
+    <h2>Match Maker</h2>
     <p>Sponsored by Homeward Pet Adoption Center</p>
+</div>
+<div class="secondary-header" *ngIf="!mainPage">
+    <img src="../../../assets/hpacLogo.png" alt="" routerLink="/">
+    <h2>Match Maker</h2>
 </div>

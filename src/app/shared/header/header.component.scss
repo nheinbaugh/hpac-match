@@ -4,4 +4,21 @@
     flex-direction: column;
     text-align: center;
   }
+  .secondary-header {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+
+    > h2 {
+      align-self: center;
+    }
+
+    > img {
+      cursor: pointer;
+      flex-basis: 30%;
+      height: 7em;
+      max-width: 7em;
+    }
+  }
 }
