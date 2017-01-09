@@ -1,10 +1,13 @@
 :host {
   .main-header {
+    padding-top: 2em;
     display: flex;
     flex-direction: column;
     text-align: center;
   }
+
   .secondary-header {
+    padding-top: 2em;
     display: flex;
     flex-direction: row;
     text-align: center;
